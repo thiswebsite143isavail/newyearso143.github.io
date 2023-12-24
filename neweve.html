@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Love Me?</title>
+    <style>
+        #no-button {
+            transition: all 0.3s ease;
+        }
+        img.imag{
+            width: 600px;
+        }
+        body{
+            background-color:blanchedalmond;
+        }
+        button.btn{
+            background-color: coral;
+            color: aliceblue;
+            border-radius: 500px;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h1>Do you wanna kiss me?</h1>
+    <div>
+        <img class="imag" src="https://media0.giphy.com/media/XYEEvoX0Ub69ZgN9ai/giphy.gif?cid=6c09b952gm91cmjrsrf19qhhs3e3glsvqr88qybzt86s4bse&ep=v1_gifs_search&rid=giphy.gif&ct=g">
+    </div>
+    <button class="btn" id="yes-button">Yes</button>
+    <button class="btn" id="no-button">No </button>
+
+    <script>
+        const yesButton = document.getElementById('yes-button');
+        const noButton = document.getElementById('no-button');
+
+        yesButton.addEventListener('click', () => {
+            alert('Yay! I knew you wanted to!');
+            window.location.href="eve.html";
+        });
+
+        noButton.addEventListener('mouseover', () => {
+            moveButtonRandomly(noButton);
+        });
+
+        function moveButtonRandomly(button) {
+            const x = Math.floor(Math.random() * window.innerWidth);
+            const y = Math.floor(Math.random() * window.innerHeight);
+            button.style.left = x + 'px';
+            button.style.top = y + 'px';
+            button.style.position = 'absolute';
+        }
+    </script>
+    </center>
+</body>
+</html>
